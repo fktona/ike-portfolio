@@ -14,7 +14,7 @@ import Workstation from "@/components/Workstation";
 
 export default function Home() {
   return (
-    <div>
+    <div className="font-neue">
       {/* Navigation */}
       <Hero />
       <Services />

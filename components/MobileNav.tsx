@@ -53,7 +53,7 @@ export default function MobileNav() {
   ];
 
   return (
-    <div className="lg:hidden fixed flex justify-between w-full px-4 py-3 bg-white/70">
+    <div className="lg:hidden fixed z-50 flex justify-between w-full px-4 py-3 bg-white/70">
       <Link href="/" className="text-xl font-serif italic">
         IkeOluwa.
       </Link>

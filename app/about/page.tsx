@@ -57,7 +57,7 @@ function About() {
 
   return (
     <motion.div
-      className="min-h-[calc(100vh-80px)] w-full py-20"
+      className="min-h-[calc(100vh-80px)] font-neue w-full py-20"
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={containerVariants}

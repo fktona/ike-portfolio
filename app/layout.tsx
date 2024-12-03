@@ -13,9 +13,9 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+const neue = localFont({
+  src: "./fonts/Neue.otf",
+  variable: "--font-neue",
   weight: "100 900",
 });
 
@@ -31,10 +31,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${neue.variable} bg-gradient-to-b  from-[#fff8e7] to-[#fffffe]`}
+      >
         <Navbar />
         <MobileNav />
-        <main className="min-h-screen bg-gradient-to-b relative from-[#fff8e7] to-[#fffffe] md:px-16 px-4">
+        <div className="mb-6" />
+        <main className="min-h-screen relative  max-w-screen-2xl mx-auto  md:px-16 px-4">
           {children}
           <Separator className="my-10 md:my-20" />
           <Footer />

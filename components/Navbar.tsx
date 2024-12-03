@@ -19,7 +19,7 @@ export function Navbar() {
 
   return (
     <motion.nav
-      className="fixed top-0  hidden lg:block   left-0 right-0 z-50 md:px-16 px-4"
+      className="fixed top-0  hidden lg:block max-w-screen-2xl mx-auto   left-0 right-0 z-50 md:px-16 px-4"
       initial={{ backgroundColor: "rgba(255, 255, 255, 0)" }}
       animate={{
         backgroundColor: scrolled
@@ -40,7 +40,7 @@ export function Navbar() {
           <NavLink href="/about" active={pathname === "/about"}>
             About
           </NavLink>
-          <NavLink href="#works" active={pathname === "#works"}>
+          <NavLink href="/works" active={pathname === "#works"}>
             Works
           </NavLink>
           <NavLink href="/properties" active={pathname === "/properties"}>
