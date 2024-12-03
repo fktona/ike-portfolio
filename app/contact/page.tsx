@@ -23,6 +23,7 @@ function SubmitButton() {
 }
 
 export default function Contact() {
+  //@ts-ignore
   const [state, formAction] = useFormState(submitForm, {
     errors: {},
     message: "",
