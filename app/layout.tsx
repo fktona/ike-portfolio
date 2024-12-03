@@ -31,12 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar />
         <MobileNav />
-        <main className="min-h-screen -z-50 bg-gradient-to-b relative from-[#fff8e7] to-[#fffffe] md:px-16 px-4">
+        <main className="min-h-screen bg-gradient-to-b relative from-[#fff8e7] to-[#fffffe] md:px-16 px-4">
           {children}
           <Separator className="my-10 md:my-20" />
           <Footer />

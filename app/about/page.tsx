@@ -35,6 +35,26 @@ function About() {
     },
   };
 
+  const downloadResume = async () => {
+    const resumeUrl = "/RESUME_IKEOLUWA_ADETONA_2024.pdf";
+
+    try {
+      const response = await fetch(resumeUrl);
+      if (!response.ok) {
+        throw new Error("Failed to fetch resume.");
+      }
+
+      const blob = await response.blob();
+      const link = document.createElement("a");
+      link.href = window.URL.createObjectURL(blob);
+      link.download = "RESUME_IKEOLUWA_ADETONA_2024.pdf";
+      link.click();
+      window.URL.revokeObjectURL(link.href);
+    } catch (error) {
+      console.error("Error downloading the resume:", error);
+    }
+  };
+
   return (
     <motion.div
       className="min-h-[calc(100vh-80px)] w-full py-20"
@@ -93,11 +113,12 @@ function About() {
               with individuals who share a vision for a sustainable and
               equitable future.
             </motion.p>
-            <motion.div className="pt-4" variants={itemVariants}>
-              <Button className="bg-black text-white rounded-full px-8 py-6 text-lg">
-                Download CV
-              </Button>
-            </motion.div>
+            <Button
+              className="bg-black text-white  rounded-full px-8 py-6 text-lg"
+              onClick={downloadResume}
+            >
+              Download Resume
+            </Button>
           </motion.div>
 
           <motion.div
@@ -118,11 +139,11 @@ function About() {
             variants={containerVariants}
           >
             <motion.div variants={itemVariants}>
-              <h3 className="text-4xl font-bold mb-2">50+</h3>
+              <h3 className="text-4xl font-bold mb-2">30+</h3>
               <p className="text-neutral-600">Projects Completed</p>
             </motion.div>
             <motion.div variants={itemVariants}>
-              <h3 className="text-4xl font-bold mb-2">5+</h3>
+              <h3 className="text-4xl font-bold mb-2">4+</h3>
               <p className="text-neutral-600">Years of Experience</p>
             </motion.div>
           </motion.div>
