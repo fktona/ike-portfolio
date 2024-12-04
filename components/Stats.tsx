@@ -65,8 +65,8 @@ export default function Stats() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Into digital solutions for brands to work on.into Practical
-            Solutions for Clients Worldwide.
+            into Practical Solutions for Clients Worldwide. 30+ Completed
+            Projects Impacting Africa.
           </motion.p>
           <div className="mt-8 md:mt-12 gap-4 md:gap-8">
             <CounterAnimation end={30} />
