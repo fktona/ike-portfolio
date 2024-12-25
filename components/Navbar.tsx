@@ -43,7 +43,7 @@ export function Navbar() {
           <NavLink href="/works" active={pathname === "#works"}>
             Works
           </NavLink>
-          <NavLink href="/properties" active={pathname === "/properties"}>
+          <NavLink href="#" active={pathname === "/properties"}>
             Properties
           </NavLink>
         </div>

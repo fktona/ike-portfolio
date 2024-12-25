@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { FaLinkedin, FaTwitter, FaInstagram, FaDribbble } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaTwitter,
+  FaInstagram,
+  FaDribbble,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 export function Footer() {
   return (
@@ -24,15 +30,15 @@ export function Footer() {
             <span className="sr-only">LinkedIn</span>
           </a>
           <a
-            href="https://twitter.com"
+            href="https://wa.me/message/4XBLK4YV4CWTC1"
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-600 hover:text-black transition-colors"
           >
-            <FaTwitter size={24} />
+            <FaWhatsapp size={24} />
             <span className="sr-only">Twitter</span>
           </a>
-          <a
+          {/* <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -40,15 +46,15 @@ export function Footer() {
           >
             <FaInstagram size={24} />
             <span className="sr-only">Instagram</span>
-          </a>
-          <a
+          </a> */}
+          {/* <a
             href="https://dribbble.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-600 hover:text-black transition-colors"
           >
             <span className="sr-only">Dribbble</span>
-          </a>
+          </a> */}
         </div>
       </div>
     </footer>

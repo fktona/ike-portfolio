@@ -22,7 +22,7 @@ export default function Home() {
       <Experience />
       <EventsAttended />
       {/* <VolunteerWork /> */}
-      <Workstation />
+      {/* <Workstation /> */}
     </div>
   );
 }

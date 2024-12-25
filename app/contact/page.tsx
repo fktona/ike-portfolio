@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useSearchParams } from "next/navigation";
 import { useFormState, useFormStatus } from "react-dom";
-import { FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaTwitter, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { submitForm } from "../actions/form";
 
 function SubmitButton() {
@@ -100,21 +100,21 @@ export default function Contact() {
                   <FaLinkedin />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://wa.me/message/4XBLK4YV4CWTC1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-3xl text-neutral-600 hover:text-black transition-colors"
                 >
-                  <FaTwitter />
+                  <FaWhatsapp />
                 </a>
-                <a
+                {/* <a
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-3xl text-neutral-600 hover:text-black transition-colors"
                 >
                   <FaInstagram />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
