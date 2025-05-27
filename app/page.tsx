@@ -11,7 +11,8 @@ import Experience from "@/components/Experience";
 import EventsAttended from "@/components/EventsAttended";
 import VolunteerWork from "@/components/VolunteerWork";
 import Workstation from "@/components/Workstation";
-
+import Certificate from "@/components/Certificate";
+  
 export default function Home() {
   return (
     <div className="font-neue">
@@ -20,6 +21,7 @@ export default function Home() {
       <Services />
       <Stats />
       <Experience />
+      <Certificate />
       <EventsAttended />
       {/* <VolunteerWork /> */}
       {/* <Workstation /> */}

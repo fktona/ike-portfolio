@@ -139,11 +139,11 @@ function About() {
             variants={containerVariants}
           >
             <motion.div variants={itemVariants}>
-              <h3 className="text-4xl font-bold mb-2">30+</h3>
+              <h3 className="text-4xl font-bold mb-2">4+</h3>
               <p className="text-neutral-600">Projects Completed</p>
             </motion.div>
             <motion.div variants={itemVariants}>
-              <h3 className="text-4xl font-bold mb-2">4+</h3>
+              <h3 className="text-4xl font-bold mb-2">6+</h3>
               <p className="text-neutral-600">Years of Experience</p>
             </motion.div>
           </motion.div>
