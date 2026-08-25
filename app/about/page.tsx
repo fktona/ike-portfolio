@@ -128,7 +128,7 @@ function About() {
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
           >
             <Image
-              src="/ike.jpg"
+              src="/ike.jpeg"
               fill
               alt="Ikeoluwa Adetona's portrait"
               className="rounded-2xl shadow-lg object-cover"
