@@ -16,14 +16,20 @@ export default {
       },
       colors: {
         ink: {
-          DEFAULT: "#222222",
-          muted: "#7B7B7B",
+          DEFAULT: "rgb(var(--ink) / <alpha-value>)",
+          muted: "rgb(var(--ink-muted) / <alpha-value>)",
         },
-        surface: "#F8F8F8",
+        surface: "rgb(var(--surface) / <alpha-value>)",
+        page: "rgb(var(--page) / <alpha-value>)",
+        elevated: "rgb(var(--elevated) / <alpha-value>)",
+        inverse: {
+          DEFAULT: "rgb(var(--inverse) / <alpha-value>)",
+          fg: "rgb(var(--inverse-fg) / <alpha-value>)",
+        },
         copper: {
-          DEFAULT: "#C45C26",
-          muted: "#E0A078",
-          soft: "#F6E8DC",
+          DEFAULT: "rgb(var(--copper) / <alpha-value>)",
+          muted: "rgb(var(--copper-muted) / <alpha-value>)",
+          soft: "rgb(var(--copper-soft) / <alpha-value>)",
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

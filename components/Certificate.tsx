@@ -32,7 +32,7 @@ export default function Certificate() {
   ];
 
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-page py-20 md:py-28">
       <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16">
         <h2 className="mb-12 text-3xl font-semibold tracking-tight md:mb-16 md:text-4xl">
           Certifications & Memberships

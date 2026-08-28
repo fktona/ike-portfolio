@@ -33,6 +33,50 @@ html {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.75rem;
+
+    --page: 255 255 255;
+    --ink: 34 34 34;
+    --ink-muted: 123 123 123;
+    --surface: 248 248 248;
+    --elevated: 255 255 255;
+    --inverse: 34 34 34;
+    --inverse-fg: 255 255 255;
+    --copper: 196 92 38;
+    --copper-muted: 224 160 120;
+    --copper-soft: 246 232 220;
+  }
+
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 40 10% 95%;
+    --card: 0 0% 11%;
+    --card-foreground: 40 10% 95%;
+    --popover: 0 0% 11%;
+    --popover-foreground: 40 10% 95%;
+    --primary: 40 10% 95%;
+    --primary-foreground: 0 0% 8%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 40 10% 95%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 40 10% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 22 68% 46%;
+
+    --page: 14 14 14;
+    --ink: 242 240 237;
+    --ink-muted: 154 154 154;
+    --surface: 22 22 22;
+    --elevated: 28 28 28;
+    --inverse: 242 240 237;
+    --inverse-fg: 14 14 14;
+    --copper: 224 120 64;
+    --copper-muted: 212 160 122;
+    --copper-soft: 58 36 24;
   }
 }
 
@@ -41,12 +85,14 @@ html {
     @apply border-border;
   }
   body {
-    @apply bg-white text-ink antialiased;
+    @apply bg-page text-ink antialiased;
   }
 }
 
-.btn-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full bg-copper font-medium text-white transition-colors hover:bg-copper/90;
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-copper font-medium text-white transition-colors hover:bg-copper/90;
+  }
 }
 
 .hover-underline-animation {
@@ -61,7 +107,7 @@ html {
   height: 1px;
   bottom: 0;
   left: 0;
-  background-color: #C45C26;
+  background-color: rgb(var(--copper));
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }

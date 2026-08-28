@@ -15,7 +15,7 @@ const item = {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-white">
+    <section className="relative min-h-screen overflow-hidden bg-page">
       <div className="pointer-events-none absolute left-[18%] top-[38%] hidden h-[280px] w-[280px] rounded-full bg-copper/25 blur-[110px] lg:block" />
       <p className="absolute left-5 top-28 hidden text-[11px] uppercase tracking-[0.35em] text-ink-muted [writing-mode:vertical-rl] rotate-180 xl:block">
         Legal Practitioner

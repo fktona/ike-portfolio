@@ -41,7 +41,7 @@ function ResearchCard({ className }: { className: string }) {
         fill
         className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
       />
-      <span className="absolute bottom-2 left-2 text-[11px] font-medium text-ink lg:bottom-3 lg:left-3 lg:text-sm">
+      <span className="absolute bottom-2 left-2 text-[11px] font-medium text-[#222] lg:bottom-3 lg:left-3 lg:text-sm">
         Research
       </span>
       <span className="absolute bottom-2 right-2 flex size-7 items-center justify-center rounded-full bg-copper text-white lg:bottom-3 lg:right-3 lg:size-11">
@@ -112,7 +112,7 @@ export default function About({ full = false }: { full?: boolean }) {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.08 }}
         >
-          <div className="flex flex-col rounded-2xl bg-white p-5 lg:h-full lg:rounded-none lg:p-4">
+          <div className="flex flex-col rounded-2xl bg-elevated p-5 lg:h-full lg:rounded-none lg:p-4">
             <span className="flex size-9 items-center justify-center rounded-full bg-copper/10 lg:size-11">
               <Globe className="size-4 text-copper lg:size-5" />
             </span>

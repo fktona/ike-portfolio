@@ -93,8 +93,8 @@ function RoleItem({
         className="absolute left-0 top-9 z-10 size-3.5 rounded-full border-2 md:hidden"
         animate={{
           scale: lit ? 1.15 : 0.7,
-          backgroundColor: lit ? "#C45C26" : "#ffffff",
-          borderColor: "#C45C26",
+          backgroundColor: lit ? "rgb(var(--copper))" : "rgb(var(--page))",
+          borderColor: "rgb(var(--copper))",
         }}
         transition={{ type: "spring", stiffness: 320, damping: 22 }}
       />
@@ -135,7 +135,7 @@ export default function Experience() {
   const scaleY = useTransform(progress, [0, 1], [0, 1]);
 
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-page py-20 md:py-28">
       <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16">
         <div className="mb-14 flex flex-col justify-between gap-6 md:mb-20 md:flex-row md:items-end">
           <h2 className="max-w-md text-3xl font-semibold tracking-tight md:text-5xl">

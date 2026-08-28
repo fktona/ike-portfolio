@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import React from "react";
 import { navLinks } from "@/lib/site";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -19,15 +20,9 @@ export function Navbar() {
 
   return (
     <motion.nav
-      className="fixed top-0 left-0 right-0 z-50 hidden lg:block"
-      initial={{ backgroundColor: "rgba(255, 255, 255, 0.92)" }}
-      animate={{
-        backgroundColor: scrolled
-          ? "rgba(255, 255, 255, 0.92)"
-          : "rgba(255, 255, 255, 0.72)",
-        backdropFilter: "blur(12px)",
-      }}
-      transition={{ duration: 0.25 }}
+      className={`fixed top-0 left-0 right-0 z-50 hidden backdrop-blur-md lg:block ${
+        scrolled ? "bg-page/92" : "bg-page/70"
+      }`}
     >
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-8 xl:px-12">
         <Link href="/" className="text-lg font-semibold tracking-tight">
@@ -46,13 +41,13 @@ export function Navbar() {
           ))}
         </div>
 
-        <Link
-          href="/contact"
-          className="btn-primary h-10 px-5 text-sm"
-        >
-          Book a call
-          <ArrowUpRight className="size-3.5" />
-        </Link>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <Link href="/contact" className="btn-primary h-10 px-5 text-sm">
+            Book a call
+            <ArrowUpRight className="size-3.5" />
+          </Link>
+        </div>
       </div>
     </motion.nav>
   );

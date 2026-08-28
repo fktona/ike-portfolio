@@ -1,6 +1,6 @@
 export default function Publications() {
   return (
-    <div className="min-h-[calc(100vh-80px)] bg-white pb-24 pt-28">
+    <div className="min-h-[calc(100vh-80px)] bg-page pb-24 pt-28">
       <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16">
         <p className="mb-3 text-xs uppercase tracking-[0.22em] text-ink-muted">
           Writing

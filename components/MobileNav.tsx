@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Menu, ArrowUpRight } from "lucide-react";
 import { navLinks } from "@/lib/site";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,22 +14,25 @@ export default function MobileNav() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <div className="fixed top-0 z-50 flex w-full items-center justify-between bg-white/80 px-5 py-4 backdrop-blur-md lg:hidden">
+    <div className="fixed top-0 z-50 flex w-full items-center justify-between bg-page/80 px-5 py-4 backdrop-blur-md lg:hidden">
       <Link href="/" className="text-lg font-semibold tracking-tight">
         IkeOluwa.
       </Link>
-      <button
-        className="relative z-50 p-1"
-        onClick={toggleMenu}
-        aria-label={isOpen ? "Close menu" : "Open menu"}
-      >
-        {isOpen ? <X className="size-6" /> : <Menu className="size-6" />}
-      </button>
+      <div className="relative z-50 flex items-center gap-1">
+        <ThemeToggle />
+        <button
+          className="p-1"
+          onClick={toggleMenu}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+        >
+          {isOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+        </button>
+      </div>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 bg-white"
+            className="fixed inset-0 bg-page"
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}

@@ -46,7 +46,7 @@ export default function Services() {
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.08, duration: 0.4 }}
-              className="flex flex-col rounded-2xl bg-white p-6 md:p-8"
+              className="flex flex-col rounded-2xl bg-elevated p-6 md:p-8"
             >
               <span className="mb-8 text-sm font-medium text-copper">{service.id}</span>
               <h3 className="mb-3 text-base font-medium">{service.title}</h3>

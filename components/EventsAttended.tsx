@@ -59,7 +59,7 @@ export default function EventsAttended() {
   };
 
   return (
-    <section className="bg-white py-8 md:py-16">
+    <section className="bg-page py-8 md:py-16">
       <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16">
         <div className="mb-8 flex flex-col justify-between gap-4 md:mb-12 md:flex-row md:items-end">
           <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">

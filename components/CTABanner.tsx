@@ -9,8 +9,7 @@ export default function CTABanner() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/house.jpg')" }}
         />
-        <div className="absolute inset-0 bg-ink/70" />
-        <div className="absolute inset-0 bg-copper/25" />
+        <div className="absolute inset-0 bg-black/70" />
         <div className="relative flex flex-col items-start justify-between gap-8 px-8 py-16 sm:px-12 md:flex-row md:items-center md:px-16 md:py-24 lg:px-20 lg:py-28">
           <h2 className="max-w-2xl text-3xl font-semibold leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
             Let&apos;s work together — book a free consultation.
