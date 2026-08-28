@@ -38,30 +38,30 @@ const bills = [
 
 export default function Research() {
   return (
-    <div className="min-h-[calc(100vh-80px)] w-full bg-gradient-to-br from-orange-50 via-orange-50/80 to-neutral-50 py-20">
-      <div className="max-w-7xl mx-auto px-6">
-        <h1 className="font-serif italic text-4xl md:text-6xl mb-6">
-          LEGISLATIVE RESEARCH PROJECTS
+    <div className="min-h-[calc(100vh-80px)] bg-white pb-24 pt-28">
+      <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16">
+        <p className="mb-3 text-xs uppercase tracking-[0.22em] text-ink-muted">
+          Work
+        </p>
+        <h1 className="mb-6 text-4xl font-semibold tracking-tight md:text-6xl">
+          Legislative Research
         </h1>
-
-        <p className="text-lg md:text-xl mb-12 max-w-3xl">
+        <p className="mb-16 max-w-2xl text-[15px] leading-7 text-ink-muted">
           Selected legislative and policy research initiatives — providing
           analytical and drafting support across maritime governance,
           transportation regulation, environmental governance, and
           institutional reform.
         </p>
 
-        <div className="space-y-4">
+        <div>
           {bills.map((bill) => (
             <div
               key={bill.id}
-              className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-white rounded-2xl shadow-sm p-6 hover:shadow-md transition-shadow"
+              className="flex flex-col justify-between gap-2 border-t border-ink/10 py-6 sm:flex-row sm:items-baseline"
             >
-              <h3 className="text-lg md:text-xl font-semibold">{bill.title}</h3>
+              <h3 className="text-base font-medium md:text-lg">{bill.title}</h3>
               {bill.ref && (
-                <span className="shrink-0 text-sm font-bold text-neutral-500">
-                  {bill.ref}
-                </span>
+                <span className="shrink-0 text-sm text-ink-muted">{bill.ref}</span>
               )}
             </div>
           ))}

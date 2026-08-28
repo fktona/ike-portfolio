@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import MobileNav from "@/components/MobileNav";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/Navbar";
 
@@ -13,14 +10,9 @@ const geistSans = localFont({
   variable: "--font-geist-sans",
   weight: "100 900",
 });
-const neue = localFont({
-  src: "./fonts/Neue.otf",
-  variable: "--font-neue",
-  weight: "100 900",
-});
 
 export const metadata: Metadata = {
-  title: "IkeOluwa - Portfolio",
+  title: "IkeOluwa Adetona — Portfolio",
   description:
     "IkeOluwa Adetona — lawyer, legislative researcher, and real-estate consultant specializing in public policy and governance.",
 };
@@ -33,16 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${neue.variable} bg-gradient-to-b  from-[#fff8e7] to-[#fffffe]`}
+        className={`${geistSans.variable} ${geistSans.className} bg-white text-ink`}
       >
         <Navbar />
         <MobileNav />
-        <div className="mb-6" />
-        <main className="min-h-screen relative  max-w-screen-2xl mx-auto  md:px-16 px-4">
-          {children}
-          <Separator className="my-10 md:my-20" />
-          <Footer />
-        </main>
+        <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   );

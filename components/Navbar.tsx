@@ -1,60 +1,57 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import MobileNav from "@/components/MobileNav";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import React from "react";
+import { navLinks } from "@/lib/site";
 
 export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = React.useState(false);
 
   React.useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 12);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <motion.nav
-      className="fixed top-0  hidden lg:block max-w-screen-2xl mx-auto   left-0 right-0 z-50 md:px-16 px-4"
-      initial={{ backgroundColor: "rgba(255, 255, 255, 0)" }}
+      className="fixed top-0 left-0 right-0 z-50 hidden lg:block"
+      initial={{ backgroundColor: "rgba(255, 255, 255, 0.92)" }}
       animate={{
         backgroundColor: scrolled
-          ? "rgba(255, 255, 255, 0.8)"
-          : "rgba(255, 255, 255, 0)",
-        backdropFilter: scrolled ? "blur(10px)" : "blur(0px)",
+          ? "rgba(255, 255, 255, 0.92)"
+          : "rgba(255, 255, 255, 0.72)",
+        backdropFilter: "blur(12px)",
       }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.25 }}
     >
-      <div className="container h-full  flex relative z-50 items-center justify-between py-2">
-        <Link href="/" className="text-xl font-serif italic">
+      <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-8 xl:px-12">
+        <Link href="/" className="text-lg font-semibold tracking-tight">
           IkeOluwa.
         </Link>
-        <div className="hidden lg:flex items-center gap-8">
-          <NavLink href="/" active={pathname === "/"}>
-            Home
-          </NavLink>
-          <NavLink href="/about" active={pathname === "/about"}>
-            About
-          </NavLink>
-          <NavLink href="/research" active={pathname === "/research"}>
-            Research
-          </NavLink>
-          <NavLink href="/publications" active={pathname === "/publications"}>
-            Publications
-          </NavLink>
+
+        <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-10">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.href}
+              href={link.href}
+              active={pathname === link.href}
+            >
+              {link.label}
+            </NavLink>
+          ))}
         </div>
-        <Link href="/contact" className="text-sm">
-          <Button
-            size={"sm"}
-            variant="default"
-            className="rounded-full hidden md:block text-sm"
-          >
-            Contact
-          </Button>
+
+        <Link
+          href="/contact"
+          className="btn-primary h-10 px-5 text-sm"
+        >
+          Book a call
+          <ArrowUpRight className="size-3.5" />
         </Link>
       </div>
     </motion.nav>
@@ -73,8 +70,8 @@ function NavLink({
   return (
     <Link
       href={href}
-      className={`text-sm hover-underline-animation ${
-        active ? "font-semibold" : ""
+      className={`hover-underline-animation text-[13px] tracking-wide ${
+        active ? "font-semibold text-copper" : "text-ink-muted"
       }`}
     >
       {children}

@@ -1,137 +1,62 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { motion, useAnimation, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
+const services = [
+  {
+    id: "01",
+    title: "Legal Services",
+    description:
+      "Legal research, drafting, litigation, and regulatory compliance across commercial, regulatory, and public law.",
   },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 10,
-    },
+  {
+    id: "02",
+    title: "Public Policy & Legislative Research",
+    description:
+      "Legislative drafting, policy briefs, comparative analysis, and advisory support on governance and regulatory reform.",
   },
-};
-
-interface ServiceProps {
-  id: number;
-  title: string;
-  description: string;
-}
-
-const ServiceCard: React.FC<ServiceProps> = ({ id, title, description }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      variants={itemVariants}
-      className="p-4 md:p-6 flex bg-transparent border-l-4 border-l-black rounded-none flex-col shadow-md hover:shadow-lg transition-shadow duration-300 justify-center gap-6"
-    >
-      <motion.div
-        className="text-4xl md:text-5xl italic text-muted-foreground mb-2 md:mb-4"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        0{id}
-      </motion.div>
-      <div className="flex flex-col justify-start grow">
-        <h3 className="text-lg md:text-lg font-bold mb-2">{title}</h3>
-        <p className="text-sm text-muted-foreground">{description}</p>
-      </div>
-    </motion.div>
-  );
-};
+  {
+    id: "03",
+    title: "Real Estate Consultancy",
+    description:
+      "Guidance on property investments, tenancy agreements, and complex real-estate transactions.",
+  },
+  {
+    id: "04",
+    title: "Development Advocacy",
+    description:
+      "Promoting sustainable development, environmental governance, and evidence-based policy.",
+  },
+];
 
 export default function Services() {
-  const services = [
-    {
-      id: 1,
-      title: "Legal Services",
-      description:
-        "Legal research, drafting, litigation, and regulatory compliance across commercial, regulatory, and public law.",
-    },
-    {
-      id: 2,
-      title: "Public Policy & Legislative Research",
-      description:
-        "Legislative drafting, policy briefs, comparative analysis, and advisory support on governance and regulatory reform.",
-    },
-    {
-      id: 3,
-      title: "Real Estate Consultancy",
-      description:
-        "Guidance on property investments, tenancy agreements, and complex real-estate transactions.",
-    },
-    {
-      id: 4,
-      title: "Development Advocacy",
-      description:
-        "Promoting sustainable development, environmental governance, and evidence-based policy.",
-    },
-  ];
-
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const controls = useAnimation();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section className="container py-10 md:py-20 my-32 md:my-40">
-      <motion.h2
-        className="text-3xl md:text-4xl text-center font-bold mb-6 md:mb-12"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        I CAN HELP YOU WITH
-      </motion.h2>
-      <motion.div
-        ref={ref}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
-        variants={containerVariants}
-        initial="hidden"
-        animate={controls}
-      >
-        {services.map((service) => (
-          <ServiceCard key={service.id} {...service} />
-        ))}
-      </motion.div>
+    <section id="services" className="bg-surface py-20 md:py-28" ref={ref}>
+      <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16">
+        <h2 className="mb-12 text-center text-3xl font-semibold tracking-tight md:mb-16 md:text-4xl">
+          How I can help
+        </h2>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((service, i) => (
+            <motion.article
+              key={service.id}
+              initial={{ opacity: 0, y: 16 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: i * 0.08, duration: 0.4 }}
+              className="flex flex-col rounded-2xl bg-white p-6 md:p-8"
+            >
+              <span className="mb-8 text-sm font-medium text-copper">{service.id}</span>
+              <h3 className="mb-3 text-base font-medium">{service.title}</h3>
+              <p className="text-sm leading-6 text-ink-muted">
+                {service.description}
+              </p>
+            </motion.article>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

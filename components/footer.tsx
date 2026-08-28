@@ -1,60 +1,73 @@
 import Link from "next/link";
-import {
-  FaLinkedin,
-  FaTwitter,
-  FaInstagram,
-  FaDribbble,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { ArrowUpRight } from "lucide-react";
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { contact, navLinks } from "@/lib/site";
 
 export function Footer() {
   return (
     <footer className="w-full">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="mb-4 ">
-          <Link href="/" className="text-xl font-serif italic">
-            IkeOluwa.
+      <div className="mx-auto max-w-[1400px] px-6 py-20 sm:px-10 lg:px-16">
+        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <h2 className="max-w-lg text-4xl font-semibold tracking-tight md:text-5xl">
+            Got a brief? Let&apos;s bring it to life.
+          </h2>
+          <Link
+            href="/contact"
+            className="btn-primary h-12 shrink-0 px-8 text-base"
+          >
+            Book a call
+            <ArrowUpRight className="size-4" />
           </Link>
         </div>
+      </div>
 
-        <p>&copy; 2024 Ikeoluwa. All rights reserved.</p>
+      <div className="bg-ink text-white">
+        <div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-6 py-8 sm:px-10 md:flex-row md:items-center md:justify-between lg:px-16">
+          <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/70">
+            <Link href="/" className="hover:text-white">
+              Home
+            </Link>
+            {navLinks.map((link) => (
+              <Link key={link.href} href={link.href} className="hover:text-white">
+                {link.label}
+              </Link>
+            ))}
+            <Link href="/contact" className="hover:text-white">
+              Contact
+            </Link>
+          </nav>
 
-        <div className="flex gap-4 mt-6 md:mt-0">
           <a
-            href="https://www.linkedin.com/in/ikeoluwa-adetona-983b20155"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-600 hover:text-black transition-colors"
+            href={`mailto:${contact.email}`}
+            className="text-2xl font-semibold tracking-tight hover:text-copper md:text-4xl"
           >
-            <FaLinkedin size={24} />
-            <span className="sr-only">LinkedIn</span>
+            {contact.email}
           </a>
-          <a
-            href="https://wa.me/message/4XBLK4YV4CWTC1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-600 hover:text-black transition-colors"
-          >
-            <FaWhatsapp size={24} />
-            <span className="sr-only">Twitter</span>
-          </a>
-          {/* <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-600 hover:text-black transition-colors"
-          >
-            <FaInstagram size={24} />
-            <span className="sr-only">Instagram</span>
-          </a> */}
-          {/* <a
-            href="https://dribbble.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-600 hover:text-black transition-colors"
-          >
-            <span className="sr-only">Dribbble</span>
-          </a> */}
+        </div>
+        <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 pb-8 sm:px-10 lg:px-16">
+          <p className="text-xs text-white/40">
+            © {new Date().getFullYear()} Ikeoluwa Adetona
+          </p>
+          <div className="flex gap-4">
+            <a
+              href={contact.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/60 hover:text-copper"
+            >
+              <FaLinkedin size={18} />
+              <span className="sr-only">LinkedIn</span>
+            </a>
+            <a
+              href={contact.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/60 hover:text-copper"
+            >
+              <FaWhatsapp size={18} />
+              <span className="sr-only">WhatsApp</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

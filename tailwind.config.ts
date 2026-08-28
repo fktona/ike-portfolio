@@ -10,10 +10,21 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
         "geist-sans": "var(--font-geist-sans)",
         neue: "var(--font-neue)",
       },
       colors: {
+        ink: {
+          DEFAULT: "#222222",
+          muted: "#7B7B7B",
+        },
+        surface: "#F8F8F8",
+        copper: {
+          DEFAULT: "#C45C26",
+          muted: "#E0A078",
+          soft: "#F6E8DC",
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

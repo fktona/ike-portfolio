@@ -4,90 +4,49 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { X, Menu } from "lucide-react";
+import { X, Menu, ArrowUpRight } from "lucide-react";
+import { navLinks } from "@/lib/site";
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const menuVariants = {
-    closed: {
-      opacity: 0,
-      x: "100%",
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-      },
-    },
-    open: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut",
-      },
-    },
-  };
-
-  const linkVariants = {
-    closed: { opacity: 0, y: 20 },
-    open: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.3,
-        ease: "easeInOut",
-      },
-    }),
-  };
-
-  const links = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/research", label: "Research" },
-    { href: "/publications", label: "Publications" },
-  ];
-
   return (
-    <div className="lg:hidden fixed z-50 top-0 flex justify-between w-full px-4 py-3 bg-white/70">
-      <Link href="/" className="text-xl font-serif italic">
+    <div className="fixed top-0 z-50 flex w-full items-center justify-between bg-white/80 px-5 py-4 backdrop-blur-md lg:hidden">
+      <Link href="/" className="text-lg font-semibold tracking-tight">
         IkeOluwa.
       </Link>
-      <Button
-        variant="ghost"
-        size="icon"
-        className="relative z-50"
+      <button
+        className="relative z-50 p-1"
         onClick={toggleMenu}
         aria-label={isOpen ? "Close menu" : "Open menu"}
       >
-        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-      </Button>
+        {isOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+      </button>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 bg-background/80 backdrop-blur-sm"
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={menuVariants}
+            className="fixed inset-0 bg-white"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25 }}
           >
-            <nav className="fixed inset-y-0 right-0 w-full max-w-xs bg-white shadow-xl flex flex-col p-6">
-              <div className="flex flex-col space-y-6 mt-16">
-                {links.map((link, i) => (
+            <nav className="flex h-full flex-col px-6 pb-10 pt-24">
+              <div className="flex flex-col gap-8">
+                {navLinks.map((link, i) => (
                   <motion.div
                     key={link.href}
-                    custom={i}
-                    variants={linkVariants}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.06 }}
                   >
                     <Link
                       href={link.href}
-                      className={`text-2xl font-medium hover-underline-animation ${
-                        pathname === link.href ? "font-semibold" : ""
+                      className={`text-3xl font-medium ${
+                        pathname === link.href ? "text-copper" : "text-ink-muted"
                       }`}
                       onClick={toggleMenu}
                     >
@@ -96,17 +55,14 @@ export default function MobileNav() {
                   </motion.div>
                 ))}
               </div>
-              <motion.div
-                className="mt-auto"
-                variants={linkVariants}
-                custom={links.length}
+              <Link
+                href="/contact"
+                onClick={toggleMenu}
+                className="btn-primary mt-auto h-12 w-full text-base"
               >
-                <Link href="/contact" onClick={toggleMenu}>
-                  <Button variant="default" className="w-full rounded-full">
-                    Contact
-                  </Button>
-                </Link>
-              </motion.div>
+                Book a call
+                <ArrowUpRight className="size-4" />
+              </Link>
             </nav>
           </motion.div>
         )}

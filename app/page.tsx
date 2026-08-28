@@ -1,30 +1,23 @@
 "use client";
 
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import MobileNav from "@/components/MobileNav";
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Stats from "@/components/Stats";
-import Experience from "@/components/Experience";
+import About from "@/components/About";
 import EventsAttended from "@/components/EventsAttended";
-import VolunteerWork from "@/components/VolunteerWork";
-import Workstation from "@/components/Workstation";
+import Experience from "@/components/Experience";
+import CTABanner from "@/components/CTABanner";
+import Services from "@/components/Services";
 import Certificate from "@/components/Certificate";
-  
+
 export default function Home() {
   return (
-    <div className="font-neue">
-      {/* Navigation */}
+    <>
       <Hero />
-      <Services />
-      <Stats />
+      <About />
       <Experience />
+      <CTABanner />
+      <Services />
       <Certificate />
       <EventsAttended />
-      {/* <VolunteerWork /> */}
-      {/* <Workstation /> */}
-    </div>
+    </>
   );
 }

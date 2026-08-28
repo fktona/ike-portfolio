@@ -3,10 +3,10 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useSearchParams } from "next/navigation";
 import { useFormState, useFormStatus } from "react-dom";
-import { FaLinkedin, FaTwitter, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { submitForm } from "../actions/form";
+import { contact } from "@/lib/site";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -15,7 +15,7 @@ function SubmitButton() {
     <Button
       type="submit"
       disabled={pending}
-      className="bg-black text-white rounded-full px-8 py-6 text-lg"
+      className="rounded-full bg-copper px-8 py-6 text-white hover:bg-copper/90"
     >
       {pending ? "Sending..." : "Send Message"}
     </Button>
@@ -23,98 +23,100 @@ function SubmitButton() {
 }
 
 export default function Contact() {
-  //@ts-ignore
   const [state, formAction] = useFormState(submitForm, {
     errors: {},
     message: "",
+    success: false,
   });
 
   return (
-    <div className="min-h-[calc(100vh-80px)] w-full bg-gradient-to-br from-orange-50 via-orange-50/80 to-neutral-50 py-20">
-      <div className="max-w-7xl mx-auto px-6">
-        <h1 className="font-serif italic text-6xl md:text-7xl mb-12">
-          Get in Touch
+    <div className="min-h-[calc(100vh-80px)] bg-white pb-24 pt-28">
+      <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16">
+        <p className="mb-3 text-xs uppercase tracking-[0.22em] text-ink-muted">
+          Contact
+        </p>
+        <h1 className="mb-16 max-w-xl text-4xl font-semibold tracking-tight md:text-6xl">
+          Got a brief? Let&apos;s bring it to life.
         </h1>
 
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <form action={formAction} className="space-y-6">
-              <div>
-                <Input name="name" placeholder="Your Name" />
-                {state.errors?.name && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {state.errors.name[0]}
-                  </p>
-                )}
-              </div>
-              <div>
-                <Input name="email" type="email" placeholder="Your Email" />
-                {state.errors?.email && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {state.errors.email[0]}
-                  </p>
-                )}
-              </div>
-              <div>
-                <Textarea name="message" placeholder="Your Message" rows={6} />
-                {state.errors?.message && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {state.errors.message[0]}
-                  </p>
-                )}
-              </div>
-              <SubmitButton />
-              {state.message && (
-                <p
-                  className={`text-sm mt-2 ${
-                    state.success ? "text-green-500" : "text-red-500"
-                  }`}
-                >
-                  {state.message}
+        <div className="grid gap-16 md:grid-cols-2">
+          <form action={formAction} className="space-y-5">
+            <div>
+              <Input
+                name="name"
+                placeholder="Your Name"
+                className="h-12 rounded-none border-0 border-b border-ink/15 bg-transparent px-0"
+              />
+              {state.errors?.name && (
+                <p className="mt-1 text-sm text-red-500">{state.errors.name[0]}</p>
+              )}
+            </div>
+            <div>
+              <Input
+                name="email"
+                type="email"
+                placeholder="Your Email"
+                className="h-12 rounded-none border-0 border-b border-ink/15 bg-transparent px-0"
+              />
+              {state.errors?.email && (
+                <p className="mt-1 text-sm text-red-500">{state.errors.email[0]}</p>
+              )}
+            </div>
+            <div>
+              <Textarea
+                name="message"
+                placeholder="Your Message"
+                rows={6}
+                className="rounded-none border-0 border-b border-ink/15 bg-transparent px-0"
+              />
+              {state.errors?.message && (
+                <p className="mt-1 text-sm text-red-500">
+                  {state.errors.message[0]}
                 </p>
               )}
-            </form>
-          </div>
-
-          <div className="space-y-8">
-            <div>
-              <h2 className="text-2xl font-bold mb-4">Contact Information</h2>
-              <p className="text-neutral-600">
-                Email: ikeoluwaadetona@gmail.com
-              </p>
-              <p className="text-neutral-600">Phone: +2348109474571</p>
-              <p className="text-neutral-600">
-                Location: Associated Estates, Lifecamp Extension, FCT- Abuja
-              </p>
             </div>
+            <SubmitButton />
+            {state.message && (
+              <p
+                className={`text-sm ${
+                  state.success ? "text-emerald-600" : "text-red-500"
+                }`}
+              >
+                {state.message}
+              </p>
+            )}
+          </form>
 
+          <div className="space-y-10">
             <div>
-              <h2 className="text-2xl font-bold mb-4">Connect with Me</h2>
-              <div className="flex space-x-4">
+              <h2 className="mb-4 text-sm uppercase tracking-[0.18em] text-ink-muted">
+                Details
+              </h2>
+              <p className="text-ink">{contact.email}</p>
+              <p className="text-ink">{contact.phone}</p>
+              <p className="mt-2 text-sm text-ink-muted">{contact.location}</p>
+            </div>
+            <div>
+              <h2 className="mb-4 text-sm uppercase tracking-[0.18em] text-ink-muted">
+                Connect
+              </h2>
+              <div className="flex gap-4">
                 <a
-                  href="https://linkedin.com"
+                  href={contact.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-3xl text-neutral-600 hover:text-black transition-colors"
+                  className="text-ink-muted hover:text-ink"
                 >
-                  <FaLinkedin />
+                  <FaLinkedin size={22} />
                 </a>
                 <a
-                  href="https://wa.me/message/4XBLK4YV4CWTC1"
+                  href={contact.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-3xl text-neutral-600 hover:text-black transition-colors"
+                  className="text-ink-muted hover:text-ink"
                 >
-                  <FaWhatsapp />
+                  <FaWhatsapp size={22} />
                 </a>
-                {/* <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-3xl text-neutral-600 hover:text-black transition-colors"
-                >
-                  <FaInstagram />
-                </a> */}
               </div>
             </div>
           </div>

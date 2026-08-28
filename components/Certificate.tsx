@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 const certifications = [
   {
     title: "Certificate in Introduction to Sustainability",
@@ -24,30 +22,33 @@ const memberships = [
   },
 ];
 
-const Certificate: FC = () => (
-  <section className="my-8 w-full flex text-center flex-col items-center justify-center">
-    <h2 className="text-3xl md:text-4xl text-center font-bold">
-      Certifications & Memberships
-    </h2>
-    <div className="my-10 md:my-20 h-[1px] w-full bg-gray-300" />
+export default function Certificate() {
+  const items = [
+    ...certifications.map((c) => ({
+      title: c.title,
+      detail: `${c.organization} · ${c.year}`,
+    })),
+    ...memberships.map((m) => ({ title: m.title, detail: m.detail })),
+  ];
 
-    <div className="space-y-6 text-center">
-      {certifications.map((c) => (
-        <div key={c.title} className="space-y-1">
-          <h3 className="font-semibold">{c.title}</h3>
-          <p className="text-sm text-gray-600">
-            {c.organization} &middot; {c.year}
-          </p>
+  return (
+    <section className="bg-white py-20 md:py-28">
+      <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16">
+        <h2 className="mb-12 text-3xl font-semibold tracking-tight md:mb-16 md:text-4xl">
+          Certifications & Memberships
+        </h2>
+        <div>
+          {items.map((item) => (
+            <div
+              key={item.title}
+              className="flex flex-col justify-between gap-2 border-t border-ink/10 py-6 md:flex-row md:items-baseline"
+            >
+              <h3 className="font-medium">{item.title}</h3>
+              <p className="text-sm text-ink-muted">{item.detail}</p>
+            </div>
+          ))}
         </div>
-      ))}
-      {memberships.map((m) => (
-        <div key={m.title} className="space-y-1">
-          <h3 className="font-semibold">{m.title}</h3>
-          <p className="text-sm text-gray-600">{m.detail}</p>
-        </div>
-      ))}
-    </div>
-  </section>
-);
-
-export default Certificate;
+      </div>
+    </section>
+  );
+}
