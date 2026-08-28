@@ -77,41 +77,41 @@ function About() {
               className="text-lg text-neutral-800"
               variants={itemVariants}
             >
-              I am Ikeoluwa Adetona, a diligent and adaptable lawyer with a
-              distinctive capacity to learn new things and excel in diverse
-              areas of law. My interests and expertise extend across
-              sustainability, legal services, teaching, gender equality
-              advocacy, management, conflict resolution, and entertainment law.
+              I am Ikeoluwa Adetona, a lawyer, legislative researcher, and
+              real-estate consultant. My work spans public policy and
+              governance, legal services, and sustainable development — with
+              expertise across legislative drafting, regulatory reform, maritime
+              governance, and institutional analysis.
             </motion.p>
             <motion.p
               className="text-lg text-neutral-800"
               variants={itemVariants}
             >
-              With a proven ability to identify problems, research extensively,
-              analyze legal frameworks, and deliver effective solutions, I have
-              successfully managed high-profile cases, providing strategic
-              guidance and exceptional outcomes for clients. My work emphasizes
-              not just professional excellence but also a commitment to
-              sustainable community development and advocacy for social
-              equality.
+              As a Legislative Aide at the Senate, I support legislative and
+              public policy research — drafting bills, policy briefs, and
+              amendment proposals, and advising on regulatory and institutional
+              reform. I also serve as a Research Assistant at the Faculty of Law,
+              University of Lagos, contributing to the African Journal on
+              Privacy and Data Protection.
             </motion.p>
             <motion.p
               className="text-lg text-neutral-800"
               variants={itemVariants}
             >
-              In addition to my legal expertise, I am a forward-thinking real
-              estate consultant who provides sound investment advice and guides
-              clients through complex property transactions with precision and
-              care.
+              I hold a Bachelor of Laws (LL.B.) from the University of Lagos and
+              a Bachelor of Law (B.L.) from the Nigerian Law School. My research
+              interests include public policy and governance, regulatory policy
+              and institutional reform, economic regulation and political
+              economy, and digital governance.
             </motion.p>
             <motion.p
               className="text-lg text-neutral-800"
               variants={itemVariants}
             >
-              When I'm not working, you can find me engaging in personal
-              development pursuits, exploring innovative ideas, or connecting
-              with individuals who share a vision for a sustainable and
-              equitable future.
+              In addition to my legal and policy work, I am a forward-thinking
+              real-estate consultant who provides sound investment advice and
+              guides clients through complex property transactions with
+              precision and care.
             </motion.p>
             <Button
               className="bg-black text-white  rounded-full px-8 py-6 text-lg"
@@ -139,8 +139,8 @@ function About() {
             variants={containerVariants}
           >
             <motion.div variants={itemVariants}>
-              <h3 className="text-4xl font-bold mb-2">4+</h3>
-              <p className="text-neutral-600">Projects Completed</p>
+              <h3 className="text-4xl font-bold mb-2">7+</h3>
+              <p className="text-neutral-600">Legislative Research Projects</p>
             </motion.div>
             <motion.div variants={itemVariants}>
               <h3 className="text-4xl font-bold mb-2">6+</h3>

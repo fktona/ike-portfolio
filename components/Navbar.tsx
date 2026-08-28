@@ -40,11 +40,11 @@ export function Navbar() {
           <NavLink href="/about" active={pathname === "/about"}>
             About
           </NavLink>
-          <NavLink href="/works" active={pathname === "#works"}>
-            Works
+          <NavLink href="/research" active={pathname === "/research"}>
+            Research
           </NavLink>
-          <NavLink href="#" active={pathname === "/properties"}>
-            Properties
+          <NavLink href="/publications" active={pathname === "/publications"}>
+            Publications
           </NavLink>
         </div>
         <Link href="/contact" className="text-sm">

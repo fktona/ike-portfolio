@@ -57,7 +57,7 @@ export default function Stats() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            TRANSFORMING LEGAL EXPERTISE
+            TRANSFORMING LEGAL & POLICY EXPERTISE
           </motion.h2>
           <motion.p
             className="text-lg text-muted-foreground text-center"
@@ -65,18 +65,17 @@ export default function Stats() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            into Practical Solutions for Clients Worldwide. 30+ Completed
-            Projects Impacting Africa.
+            into Practical Solutions for Clients, Institutions, and Communities.
           </motion.p>
           <div className="mt-8 md:mt-12 gap-4 md:gap-8">
-            <CounterAnimation end={30} />
+            <CounterAnimation end={7} />
             <motion.div
               className="text-sm text-muted-foreground"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              Completed projects
+              Legislative & policy research projects
             </motion.div>
           </div>
         </div>

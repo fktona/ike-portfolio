@@ -59,39 +59,39 @@ export default function Experience() {
   const experienceData = [
     {
       period: "June 2023 – Present",
-      role: "Legislative Aide, Policy Analyst on Marine and Environmental Matters",
-      company: "National Assembly of Nigeria, FCT-Abuja",
+      role: "Legislative Aide",
+      company: "Senate, National Assembly, Nigeria",
       responsibilities:
-        "Serving as a legal expert for the Chairman of the Senate Committee on Marine Transport since the inception of the 10th Assembly in 2023. Responsibilities include drafting and reviewing laws and bills, providing legal analysis, and effectively communicating legislative matters to stakeholders.",
+        "Legislative, legal, and public policy research; policy analysis, drafting, and advisory support on maritime governance, transportation regulation, environmental governance, and institutional reform. Prepares policy briefs, legislative reports, briefing notes, bills, and amendment proposals.",
+    },
+    {
+      period: "June 2025 – Present",
+      role: "Research Assistant",
+      company:
+        "Faculty of Law, University of Lagos (to Dr. Akinola Ebunolu Akintayo, Editor-in-Chief, African Journal on Privacy and Data Protection)",
+      responsibilities:
+        "Editorial and research support — manuscript review, citation verification, abstract management, and editorial coordination relating to privacy, data protection, and digital governance.",
+    },
+    {
+      period: "February 2025 – Present",
+      role: "Member, Technical Experts Team",
+      company: "Nigerian Coast Guard (Establishment) Bill, 2024 (SB 575)",
+      responsibilities:
+        "Technical consultations, legislative review, and policy discussions on the establishment of a Nigerian Coast Guard and the strengthening of Nigeria's maritime security architecture.",
     },
     {
       period: "August 2022 – June 2023",
       role: "Legal Associate",
-      company: "AA. Malami (SAN) & Co, FCT-Abuja",
+      company: "The Chambers of Ubong Akpan, Abuja, Nigeria",
       responsibilities:
-        "Researching and analyzing legal cases, statutes, regulations, and precedents. Preparing legal documents and conducting interviews with witnesses and clients.",
+        "Legal research, analysis, and case preparation across commercial, regulatory, and public law matters; drafted legal opinions, contracts, pleadings, and memoranda, including engagements with A.A. Malami (SAN) & Co.",
     },
     {
       period: "June 2020 – July 2021",
-      role: "Sole Legal Consultant",
-      company: "Excellent Square Investment Nigeria Ltd, FCT-Abuja",
+      role: "Head of Legal Operations",
+      company: "Excellent Square Investment Nigeria Limited, Abuja",
       responsibilities:
-        "Prepared contractual agreements and provided sustainable community development advice.",
-    },
-    {
-      period: "November 2019 – May 2020",
-      role: "Legal Consultant",
-      company: "A1 Mega Management and Consultancy, FCT-Abuja",
-      responsibilities:
-        "Administrative reporting and drafting real estate agreements.",
-    },
-    {
-      period: "2016 – 2019",
-      role: "Extership and Internships",
-      company:
-        "Aluko and Oyebode Law Firm, Senior Magistrate Court, Tokunbo Orimobi LLP",
-      responsibilities:
-        "Gained foundational experience in legal practice, litigation, and client relations.",
+        "Corporate governance, regulatory compliance, stakeholder engagement, and project implementation for Excellent Mega City, Lugbe, Abuja.",
     },
   ];
 

@@ -48,8 +48,8 @@ export default function MobileNav() {
   const links = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/works", label: "Works" },
-    { href: "/properties", label: "Properties" },
+    { href: "/research", label: "Research" },
+    { href: "/publications", label: "Publications" },
   ];
 
   return (

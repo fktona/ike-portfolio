@@ -76,25 +76,25 @@ export default function Services() {
       id: 1,
       title: "Legal Services",
       description:
-        "Expert advice on litigation, contract drafting, and policy analysis.",
+        "Legal research, drafting, litigation, and regulatory compliance across commercial, regulatory, and public law.",
     },
     {
       id: 2,
-      title: "Real Estate Consultancy",
+      title: "Public Policy & Legislative Research",
       description:
-        "Guidance on safe property investments and tenancy agreements.",
+        "Legislative drafting, policy briefs, comparative analysis, and advisory support on governance and regulatory reform.",
     },
     {
       id: 3,
-      title: "Development Advocacy",
+      title: "Real Estate Consultancy",
       description:
-        "Promoting gender equality, environmental policies, and impactful legislation.",
+        "Guidance on property investments, tenancy agreements, and complex real-estate transactions.",
     },
     {
       id: 4,
-      title: "Community Development",
+      title: "Development Advocacy",
       description:
-        "Supporting initiatives for sustainable growth and progress.",
+        "Promoting sustainable development, environmental governance, and evidence-based policy.",
     },
   ];
 

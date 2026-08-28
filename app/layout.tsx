@@ -21,7 +21,8 @@ const neue = localFont({
 
 export const metadata: Metadata = {
   title: "IkeOluwa - Portfolio",
-  description: "Legal Practitioner",
+  description:
+    "IkeOluwa Adetona — lawyer, legislative researcher, and real-estate consultant specializing in public policy and governance.",
 };
 
 export default function RootLayout({

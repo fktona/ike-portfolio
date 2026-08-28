@@ -81,11 +81,11 @@ export default function Hero() {
             </span>
           </Badge>
           <p className="text-base text-[16px] font-medium text-muted-foreground md:text-start mt-4 md:mt-0 text-center ">
-            Real Estate Consultancy,
+            Legislative & Public Policy Research,
             <br />
             Specialized in Legal Services,
             <br />
-            Advocacy for Sustainable Development.
+            Real Estate Consultancy & Development Advocacy.
           </p>
         </motion.div>
         <motion.div
@@ -106,6 +106,10 @@ export default function Hero() {
           >
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-center sm:text-right mb-2">
               LEGAL PRACTITIONER & <br /> REAL ESTATE CONSULTANT
+              <br />
+              <span className="text-base md:text-xl">
+                Legislative Researcher | Public Policy & Governance
+              </span>
             </h3>
             <Link
               href="/about"
